@@ -20,12 +20,14 @@ app.use(bodyParser.urlencoded({limit:'30mb',extended:true}))
 app.use(cors());
 dotenv.config();
 
- const port = process.env.PORT
-app.listen(port,()=>{
-    console.log(`connected to ${process.env.PORT}`);
-})
 
 mongoose.connect(process.env.MONGO_DB,{useNewUrlParser:true, useUnifiedTopology:true}).then(()=>{
+ 
+ 
+      const port = process.env.PORT
+     app.listen(port,()=>{
+         console.log(`connected to ${process.env.PORT}`);
+     })
    
 }).catch((e)=>console.log(e));
 
