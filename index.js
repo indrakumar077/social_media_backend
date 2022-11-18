@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({limit:'30mb',extended:true}))
 app.use(cors());
 dotenv.config();
 
- const port = process.env.PORT || 3000
+ const port = process.env.PORT
 app.listen(port,()=>{
     console.log(`connected to ${process.env.PORT}`);
 })
