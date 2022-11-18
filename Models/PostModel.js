@@ -6,6 +6,7 @@ const PostSchema = mongoose.Schema(
     {
 
          UserId : {type : String, required : true},
+         firstname: String,
          desc :  String,
          likes : [],
          image : String,
