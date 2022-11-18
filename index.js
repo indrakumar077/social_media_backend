@@ -21,9 +21,13 @@ app.use(cors());
 dotenv.config();
 
 
-mongoose.connect(process.env.MONGO_DB,{useNewUrlParser:true, useUnifiedTopology:true}).then(()=>app.listen(process.env.PORT,()=>{
+app.listen(process.env.PORT||3000,()=>{
     console.log(`connected to ${process.env.PORT}`);
-})).catch((e)=>console.log(e));
+})
+
+mongoose.connect(process.env.MONGO_DB,{useNewUrlParser:true, useUnifiedTopology:true}).then(()=>{
+   
+}).catch((e)=>console.log(e));
 
 app.use('/api/upload/image', async(req,res)=>{
     
